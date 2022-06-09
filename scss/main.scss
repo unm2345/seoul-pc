@@ -1,0 +1,1069 @@
+@import './mixin';
+@import './var';
+
+/* skip */
+.skip{
+  a{
+    position: absolute;
+    top: -44px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    
+    color: #fff;
+    font-size: 24px;
+    line-height: 1;
+    text-align: center;
+    background: #000;
+
+    &:focus{
+      top: 0;
+    }
+  }
+}
+
+/* main layouot */
+.main{
+  &_wrap{
+    overflow: hidden;
+
+    height: 350px;
+    margin-bottom: 50px;
+    @include cf;
+  }
+
+  &_slide{
+    float: left;
+    width: 770px;
+    height: 100%;
+  }
+
+  &_times-square{
+    float: right;
+    width: 360px;   
+  }
+
+  &_board{
+    @include cf;
+  }
+
+  &_seoul-banner{
+    margin: 35px 0 50px;
+  }
+
+  &_event{
+    float: left;
+    width: 360px;
+    margin-right: 36px;
+  }
+
+  &_sub-service{
+    float: left;
+    width: 360px;
+  }
+
+  &_info{
+    padding: 40px 0;
+    margin-top: 50px;
+    border-top: 2px solid #222;
+  }
+
+  &_news{
+    margin-bottom: 30px;
+  }
+
+  &_seoul-video{
+    float: left;
+    width: 280px;
+    margin-right: 20px;
+  }
+
+  &_seoul-news{
+    float: left;
+    width: 480px;
+  }
+
+  &_seoul-sns{
+    float: right;
+    width: 350px;
+  }
+
+  &_banner{
+    padding: 50px 0 85px 0;
+    margin-top: 50px;
+    border-top: 2px solid #222;
+  }
+
+  &_site{
+    margin-bottom: 18px;
+  }
+}
+
+/* section common */
+.section_title{
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.35em;
+}
+
+/* visual */
+.visual{
+  position: relative;
+  height: 100%;
+
+  &_tab{
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 80px;
+    height: 50%;
+    padding-top: 4px;
+
+    background-color: #d2e1e9;
+
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+    
+    z-index: 10;
+
+    &::before{
+      content: '';
+      display: block;
+      width: 50px;
+      height: 50px;
+      margin: 0 auto 10px;
+      border-radius: 50%;
+
+      background: url(../imgs/sp_icon_2.png) no-repeat #fff;
+    }
+
+    &.ico-join{
+      top: 50%;
+      &::before{
+        background-position: -50px 0;
+      }
+    }
+  }
+
+  &_panel{
+    display: none;
+    overflow: hidden;
+    margin-left: 80px;
+    width: 690px;
+  }
+
+  &_slider.active{
+    .visual_tab{
+      background-color: #0158a8;
+      color: #fff;
+
+      &::after{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        border-width: 25px 0 25px 32px;
+        border-style: solid;
+        border-color: transparent transparent transparent #0158a8;
+
+        margin-top: -25px;
+      }
+    }
+
+    .visual_panel{
+      display: block;
+    }
+  }
+
+  &_link{
+    display: block;
+    position: relative;
+
+    img{
+      width: 100%;      
+    }
+    p{
+      position: absolute;
+      left: 0;
+      bottom: 0px;
+      width: 100%;
+      height: 40px;
+      padding: 0 120px 0 10px;
+      background-color: rgba(0,0,0,.7);
+      box-sizing: border-box;
+      
+      color: #fff;
+      font-size: 14px;
+      @include el;
+      line-height: 40px;
+    }
+  }
+
+  .slide-control{
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+  }
+
+  .pagination{
+    float: left;  
+    position: relative;  
+    padding-right: 16px;
+    margin-right: 4px;
+    color: #fff;
+    font-size: 13px;
+
+    &::after{
+      content: '';
+      position: absolute;
+      top: -4px;
+      right: 0;
+      width: 1px;
+      height: 24px;
+      background: rgba(255,255,255,0.5);
+    }
+
+    li{
+      display: none;
+      line-height: 18px;
+
+      &.slick-active{
+        display: block;
+      }
+    }
+  }
+
+  &_btn{
+    float: left;
+    margin: 0 1px;
+    &::after{
+      content: '';
+      display: block;
+      width: 18px;
+      height: 18px;
+    }
+
+    &.prev{
+      cursor: pointer;
+      &::after{
+        background-position: -241px -285px;
+      }
+    }
+  
+    &.pause{
+      cursor: pointer;
+      &::after{
+        background-position: -284px -285px;
+      }
+    }
+  
+    &.start{
+      display: none;
+      &::after{
+        background-position: -269px -285px;
+      }
+    }
+  
+    &.next{
+      &::after{
+        background-position: -256px -285px;
+      }
+    }
+  }
+
+}
+
+/* corona */
+.corona{  
+  position: relative;
+  &_link{
+    display: block;
+    height: 129px;
+    background: url(../imgs/bg_corona.jpg) no-repeat top center;
+  }
+
+  &_date{
+    position: absolute;
+    top: 9px;
+    right: 20px;
+
+    color: #000;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 25px;
+  }
+
+  &_item{
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    color: #fff;
+    
+    & + &{
+      left: auto;
+      right: 20px;
+    }
+    em{
+      display: block;
+
+      width: 161px;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.09em;
+      text-align: center;
+    }
+  }
+}
+
+/* vaccin */
+.vaccin{
+  position: relative;
+  
+  &_link{
+    display: block;
+    height: 85px;
+    background: url(../imgs/bg_corona.jpg) no-repeat bottom center;
+  }
+
+  &_date{
+    position: absolute;
+    top: 6px;
+    right: 20px;
+
+    color: #000;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 25px;
+  }
+
+  &_item{
+    position: absolute;
+    bottom: 9px;
+    left: 20px;
+    color: #fff;
+    
+    &:nth-of-type(2) {
+      left: 102px;
+    }
+
+    &:nth-of-type(3) {
+      left: 185px;
+    }
+
+    &:nth-of-type(4) {
+      left: 268px;
+    }
+    em{
+      display: block;
+
+      width: 72px;
+      font-size: 18px;
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+}
+
+/* mayor */
+.mayor{
+  position: relative;
+  height: 130px;
+  margin-top: 7px;
+  background: url(../imgs/img_mayor.jpg) no-repeat;
+
+  &_link{
+    display: block;
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    
+    &::after{
+      content: '';
+      display: block;
+      width: 101px;
+      height: 30px;
+    }
+
+    &.img-want::after{
+      background: url(../imgs/img_mayor_01.png) no-repeat;
+    }
+
+    &.img-promise{
+      left: 119px;
+      &::after{
+        background: url(../imgs/img_mayor_02.png) no-repeat;
+      }
+    }
+  }
+}
+
+/* main-service */
+.main-service{
+  position: relative;  
+  ul{    
+    display: table;    
+    width: 100%;
+    padding-top: 20px;
+    margin-top: 10px;
+    border-top: 1px solid #dbdbdb;
+  }
+
+  li{
+    display: table-cell;
+  }
+
+  &_link{
+    display: block;
+
+    font-size: 15px;
+    text-align: center;
+
+    &::before{
+      content: '';
+      display: block;
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 8px;
+      
+      background: url(../imgs/sp_icon_1.png) no-repeat;
+    }
+
+    &.ico-publice::before{
+      background-position: -360px 0;
+    }
+    &.ico-answer::before{
+      background-position: 0 0;
+    }
+    &.ico-job::before{
+      background-position: -120px 0;
+    }
+    &.ico-realestate::before{
+      background-position: -300px 0;
+    }
+    &.ico-study::before{
+      background-position: -180px 0;
+    }
+    &.ico-welfare::before{
+      background-position: -960px 0;
+    }
+    &.ico-house::before{
+      background-position: -780px 0;
+    }
+    &.ico-town::before{
+      background-position: -840px 0;
+    }
+    &.ico-mediahub::before{
+      background-position: -1020px 0;
+    }
+    &.ico-ebook::before{
+      background-position: -1080px 0;
+    } 
+    &.ico-council::before{
+      background-position: -600px 0;
+    }
+  }
+  
+  &_link-more{
+    position: absolute;
+    top: 0px;
+    right: 0;
+
+    width: 110px;
+    height: 27px;    
+    border: 1px solid #ddd;
+
+    
+    font-size: 15px;
+    line-height: 28px;    
+    text-align: center;
+
+    &::after{
+      content: '';
+
+      display: inline-block;
+      width: 6px;
+      height: 11px;
+      margin-left: 11px;
+
+      background: url(../imgs/ico_arw_right.png) no-repeat;
+    }
+  }
+}
+
+/* seoul-banner */
+.seoul-banner{
+  padding: 20px 0;
+  background: #eff4f8;
+    
+  ul{
+    @include cf;
+  }
+  li{
+    float: left;
+    position: relative;
+    width: 25%;    
+
+    & + li::before{
+      content: '';
+
+      position: absolute;
+      width: 1px;
+      height: 60px;
+      top: 5px;
+      left: 0;
+      background: #dbdbdb;
+    }
+  }
+
+  &_link{
+    display: block;
+  }
+}
+
+/* event */
+.event{
+  position: relative;
+  ul{
+    margin-top: 5px;
+    padding-top: 10px;
+    border-top: 2px solid #dbdbdb;
+  }
+  li{
+    padding: 6px 0;
+    @include el;
+  }
+
+  &_cate{    
+    margin-right: 9px;
+
+    font-size: 15px;
+
+    &.cate-house {
+      color: #c35c3c;;
+    }
+    &.cate-environment {
+      color: #599100;
+    }
+    &.cate-culture {
+      color: #9b64d3;
+    }
+    &.cate-welfare {
+      color: #d76000;
+    }
+    &.cate-work {
+      color: #028ab6;
+    } 
+  }
+
+  &_link{
+    font-size: 15px;
+  }
+
+  &_link-more{
+    position: absolute;
+    top: 6px;
+    right: 0;
+
+    &::after{
+      content: '';
+      display: block;
+      width: 20px;
+      height: 18px;
+  
+      border: 1px solid #ddd;
+      background-position: -1px -1px;
+    }
+  }
+}
+
+/* sub-service */
+.sub-service{
+  ul{
+    padding: 17px 5px 7px 20px;
+    margin-top: 5px;
+    background: #eff4f8;
+
+    @include cf;
+  }
+
+  li{
+    float: left;
+    position: relative;
+    width: 50%;
+    padding-left: 10px;
+    margin-bottom: 10px;
+
+    box-sizing: border-box;
+
+    &::before{
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 2px;
+      height: 2px;
+      background: #666666;
+      margin-top: -1px;
+    }
+  }
+
+  &_link{
+    display: block;
+    width: 94%;
+    
+    color: #333;
+    font-size: 15px;
+    @include el;
+  }
+}
+
+/* info */
+.info{
+  ul{
+    padding: 20px 29px 0;
+    @include cf;
+  }
+  li{
+    float: left;
+    width: 85px;
+
+    + li{
+      margin-left: 59px;
+    }
+  }
+  &_link{
+    display: block;
+
+    text-align: center;   
+    
+    &::before{
+      content: '';
+      display: block;
+      width: 85px;
+      height: 85px;
+      margin-bottom: 15px;
+      background-repeat: no-repeat;
+      background-position: center center;      
+    }
+
+    &.ico-house::before{
+      background-image: url(../imgs/ico_house.png);
+    }
+
+    &.ico-economy::before{
+      background-image: url(../imgs/ico_economy.png);
+    }
+
+    &.ico-traffic::before{
+      background-image: url(../imgs/ico_traffic.png);
+    }
+
+    &.ico-environment::before{
+      background-image: url(../imgs/ico_environment.png);
+    }
+
+    &.ico-welfare::before{
+      background-image: url(../imgs/ico_welfare.png);
+    }
+
+    &.ico-safty::before{
+      background-image: url(../imgs/ico_safty.png);
+    }
+
+    &.ico-culture::before{
+      background-image: url(../imgs/ico_culture.png);
+    }
+
+    &.ico-work::before{
+      background-image: url(../imgs/ico_work.png);
+    }
+  }
+}
+
+/* news */
+.news{
+  ul{
+    margin: 20px -10px 0;
+    @include cf;
+  }
+
+  li{
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+  }
+
+  &_link{
+    display: block;
+
+    .figure{
+      overflow: hidden;
+      position: relative;      
+      margin-bottom: 15px;
+    }
+
+    .cate{
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      
+      width: 82px;
+      height: 32px;
+
+      color: #fff;      
+      font-size: 14px;
+      line-height: 32px;
+      text-align: center;
+      z-index: 10;
+
+      &-house{
+        background: $color-house;
+      }
+
+      &-environment{
+        background: $color-environment;
+      }
+
+      &-culture{
+        background: $color-culture;
+      }
+
+      &-welfare{
+        background: $color-welfare;
+      }
+    }
+
+    img{
+      width: 100%;
+      min-height: 188px;
+      transition: 0.3s ease-in-out;
+    }
+
+    p{
+      @include el(2, 1.5em);
+    }
+
+    &:hover img{
+      transform: scale(1.1);
+    }
+
+    &_corona:hover img{
+      transform: scale(1);
+    }
+  }
+}
+
+/* seoul-video */
+.seoul-video{
+  &_item{
+    margin-top: 11px;
+  }
+
+  &_link{
+    display: block;
+    position: relative;
+
+    .figure{
+      overflow: hidden;
+      height: 152px;
+  
+      img{
+        width: 100%;
+        height: 100%;
+        transition: 0.3s ease-in-out; 
+      }
+    }
+
+    p{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 11px 20px;
+      background-color: rgba(0,0,0,.5);
+      box-sizing: border-box;
+      
+      color: #fff;
+      font-weight: 700;
+      @include el;
+    }
+
+    &:hover{
+      .figure img{
+        transform: scale(1.1);
+      }
+    }
+  }
+
+}
+
+/* seoul-news */
+.seoul-news{
+  ul{
+    margin-top: 11px;
+  }
+  li{    
+    padding: 8px 0;
+
+    @include el;
+    line-height: 22px;
+  }
+  &_link-cate{
+    margin-right: 18px;
+    color: #09ac43;
+  }
+
+  &_link-title{
+    color: #555;
+  }
+}
+
+/* seoul-sns */
+.seoul-sns{
+  position: relative;
+  height: 194px;
+  background: url(../imgs/bg_sns.jpg) no-repeat center;
+
+  &_title{
+    padding-top: 10px;
+    padding-left: 15px;
+
+    font-size: 22px;
+
+    &::after{
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      padding-left: 8px;
+      
+      margin-left: 8px;
+      border-left: 1px solid #878787;
+      
+      vertical-align: -4px;
+      background: url(../imgs/sp_sns_01.png) no-repeat -247px 0;
+    }
+  }
+
+  &_link-seoul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;    
+  }
+    
+  
+  ul{    
+    position: absolute;
+    top: 93px;
+    left: 50%;
+    margin-left: -135px;
+    z-index: 10;
+  }
+  
+  li{
+    display: inline-block;;
+  }
+
+  &_link{
+    display: block;
+
+    &::after{
+      content: '';
+      display: block;
+      width: 40px;
+      height: 40px;
+      margin: 0 1px;
+
+      background: url(../imgs/sp_sns_01.png) no-repeat;
+    }
+
+    &.ico-ist::after{
+      background-position: 0 0;
+    }
+    &.ico-fb::after{
+      background-position: -40px 0;
+    }
+    &.ico-tw::after{
+      background-position: -80px 0;
+    }
+    &.ico-nbg::after{
+      background-position: -120px 0;
+    }
+    &.ico-ytb::after{
+      background-position: -160px 0;
+    }
+    &.ico-kks::after{
+      background-position: -200px 0;
+    }
+  }
+}
+
+/* banner */
+.banner{
+  position: relative;
+
+  &_slider{
+    overflow: hidden;
+  }
+
+  .slide-wrap{
+    margin: 0 -21px;
+  }
+  .slide-item{ 
+    text-align: center;
+
+    a{
+      display: inline-block;
+    }
+  }
+
+  &_control{
+    position: absolute;
+    right: 0;
+    margin-top: 5px;
+  }
+
+  .pagination{
+    float: left;
+    bottom: 0;
+    width: auto;
+    margin-right: 5px;
+
+    font-size: 14px;
+
+    li{
+      display: none;
+
+      &.slick-active{
+        display: block;
+      }
+    }
+  }
+
+  &_btn{
+    float: left;
+
+    & + &{
+      margin-left: -1px;
+    }
+
+    &::after{
+      content: '';
+      float: left;
+      width: 18px;
+      height: 18px;
+      border: 1px solid #999;
+
+      background: url(../imgs/sp_common.png) no-repeat;
+    }
+
+    &.prev::after{
+      background-position: -45px -43px;
+    }
+    &.pause::after{
+      background-position: -65px -44px;
+    }
+    &.start{
+      display: none;
+      &::after{
+        background-position: -101px -43px;
+      }
+    }
+    &.next::after{
+      background-position: -86px -43px;
+    }
+  }
+}
+
+/* site */
+.site{
+  position: relative;
+
+  > ul{
+    border: 1px solid #d0d0d0;
+    @include cf;
+
+    > li{
+      float: left;
+      width: 33.3333%;      
+      box-sizing: border-box;
+      
+      & + li{
+        border-left: 1px solid #d0d0d0;
+      }
+    }
+  }
+
+  &-tab{
+    display: block;
+    width: 100%;
+    height: 50px;
+    background: #f7f7f7;
+
+    color: #333;
+    font-size: 14px;
+    line-height: 50px;
+    text-align: center;
+
+    &::after{
+      content: '';
+      display: inline-block;
+      
+      top: 8px;
+      right: 0px;
+      height: 7px;
+      width: 7px;
+      margin-left: 10px;
+      vertical-align: -2px;
+
+      border-width: 0px 2px 2px 0px;
+      border-style: solid;
+      border-color: #373737;
+
+      transform: rotate(-135deg);
+      transform-origin: center center;
+      transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    &.active::after{
+      vertical-align: 2px;
+      transform: rotate(45deg);
+    }
+  }
+
+  &-panel{
+    display: none;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    
+    width: 100%;
+    padding: 10px 20px 20px;
+    background: #fff;
+    border: 1px solid #d0d0d0;
+    box-sizing: border-box;
+
+    z-index: 10;
+
+    ul{
+      @include cf;
+    }
+
+    li{
+      float: left;
+      width: 25%;
+      margin-top: 10px;
+    }
+
+    &_link{
+      color: #555;
+      font-size: 14px;
+    }
+  }
+
+}
